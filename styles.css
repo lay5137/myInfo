@@ -11,33 +11,55 @@ header {
     background: rgba(51, 51, 51, 0.9);
     color: #fff;
     padding: 10px 0;
-    position: fixed;
+    position: relative; /* 상대 위치 설정 */
     width: 100%;
     top: 0;
     z-index: 1000;
 }
+
+header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 상대 위치 설정 */
+}
+
 header h1 {
     margin: 0;
     text-align: center;
 }
+
+header img.header-logo {
+    width: 50px;
+    height: auto;
+    position: absolute; /* 절대 위치 설정 */
+    top: 10px; /* 상단 여백 설정 */
+    right: 20px; /* 우측 여백 설정 */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
+
 nav ul li {
     display: inline;
     margin: 0 10px;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
 }
+
 main {
-    padding: 20px;
+    padding: 10px;
     flex: 1;
-    margin-top: 120px;
+    margin-top: 0px;
 }
+
+
 section {
     margin-bottom: 40px;
 }
@@ -59,13 +81,28 @@ section h2 {
     font-weight: bold;
     color: red;
 }
-.project, .club-activity, .company-info, .future-plan-content {
+.project1, .project2, .club-activity, .company-info, .future-plan-content {
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     background-color: #f9f9f9;
 }
+.project2 img{
+    width: 300px;
+}
+.styled-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.styled-button:hover {
+    background-color: #555;
+}
+
 .project h4, .club-activity h4, .company-info h3 {
     margin: 0 0 10px 0;
 }

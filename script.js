@@ -79,4 +79,31 @@ window.onload = function() {
     document.getElementById('feedback-form').addEventListener('submit', submitFeedback);
     document.getElementById('go-to-site-btn').addEventListener('click', goToSelectedSite);
     document.getElementById('draw-book-btn').addEventListener('click', drawBookImage);
+    document.getElementById('toggle-photo-btn').addEventListener('click', togglePhotoVisibility);
 }
+
+// 함수 정의: 선택한 책 이미지 그리기
+function drawBookImage() {
+    var canvas = document.getElementById('book-canvas');
+    var ctx = canvas.getContext('2d');
+    var bookSelect = document.getElementById('book-select');
+    var selectedBook = bookSelect.value;
+    var img = new Image();
+    img.src = selectedBook;
+
+    img.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // 캔버스를 지움
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height); // 이미지를 캔버스에 그림
+    };
+}
+
+// 함수 정의: 사진 보기 버튼 클릭 시 이미지 토글
+function togglePhotoVisibility() {
+    var photo = document.getElementById('project2-photo');
+    if (photo.style.display === 'none') {
+        photo.style.display = 'block';
+    } else {
+        photo.style.display = 'none';
+    }
+}
+
